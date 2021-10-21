@@ -12,14 +12,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isAdmin = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('PetCare'),
       ),
-      body: _getBody(),
-      drawer: _getMechanicMenu(),
+      drawer: isAdmin ? _getMechanicMenu() : _getCustomerMenu(),
     );
   }
 
@@ -67,6 +67,42 @@ class _HomeScreenState extends State<HomeScreen> {
           ListTile(
             leading: Icon(Icons.people),
             title: const Text('Usuarios'),
+            onTap: () {},
+          ),
+          Divider(
+            color: Colors.black,
+            height: 2,
+          ),
+          ListTile(
+            leading: Icon(Icons.face),
+            title: const Text('Editar Perfil'),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.logout),
+            title: const Text('Cerras Sesión'),
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()));
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _getCustomerMenu() {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+              child: Image(
+            image: AssetImage('assets/PetCareLogo.png'),
+          )),
+          ListTile(
+            leading: Icon(Icons.pets_outlined),
+            title: const Text('Mis Mascotas'),
             onTap: () {},
           ),
           Divider(

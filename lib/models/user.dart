@@ -8,7 +8,7 @@ class User {
   String address = '';
   String imageId = '';
   String imageFullPath = '';
-  int userType = 0;
+  int userType = 1;
   String fullName = '';
   String id = '';
   String userName = '';
