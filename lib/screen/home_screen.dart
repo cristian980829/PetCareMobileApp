@@ -45,12 +45,12 @@ class _HomeScreenState extends State<HomeScreen> {
             image: AssetImage('assets/PetCareLogo.png'),
           )),
           ListTile(
-            leading: Icon(Icons.two_wheeler),
+            leading: Icon(Icons.star_rate_outlined),
             title: const Text('Razas'),
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.precision_manufacturing),
+            leading: Icon(Icons.paste_outlined),
             title: const Text('Procedimientos'),
             onTap: () {},
           ),
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.toys),
+            leading: Icon(Icons.pets_outlined),
             title: const Text('Tipos de Mascotas'),
             onTap: () {},
           ),
