@@ -12,14 +12,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool isAdmin = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('PetCare'),
       ),
-      drawer: isAdmin ? _getMechanicMenu() : _getCustomerMenu(),
+      drawer:
+          widget.token.user.userType == 0 ? _getVetMenu() : _getCustomerMenu(),
     );
   }
 
@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _getMechanicMenu() {
+  Widget _getVetMenu() {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
